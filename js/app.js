@@ -50,17 +50,23 @@
 // Build menu
 
 //selecting all sections
-var sections = document.querySelectorAll("section");
-//building the navBar
-document.addEventListener("DomContentLoaded", buildMyNavBar);
-const buildMyNavBar = () => {
+var sectionsNodeListNodeList = document.querySelectorAll("section");
+var buildMyNavBar = function() {
+    console.log("inside the navbar method");
     var myUlList = document.querySelector("ul#navbar__list");
     var documentFragment = document.createDocumentFragment(); //creating the document fragment
-    for (var sec = 1; sec <= sections.length; sec++) {
+    // for loop on the sectionslist
+    for (var sec = 1; sec <= sectionsNodeList.length; sec++) {
         const listItem = document.createElement("li"); //creating the document fragment
-        listItem.textContent = `<a href="#${sec.id}" class="navLink">${sec.dataset.nav}</a>`; // adding <a> and customize the link
+        listItem.innerHTML = `<a href="#${sec.id}" class="navLink">${sec.dataset.nav}</a>`; // adding <a> and customize the link
     }
 };
+//just for testing
+console.log("before the navbarBuilder");
+//building the navBar after loading all Dom content
+document.addEventListener("DomContentLoaded", buildMyNavBar);
+//just for testing
+console.log("afer the navbarBuilder");
 // Scroll to section on link click
 
 // Set sections as active
