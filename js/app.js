@@ -51,6 +51,7 @@
 
 //selecting all sections
 var sectionsNodeListNodeList = document.querySelectorAll("section");
+
 var buildMyNavBar = function() {
     console.log("inside the navbar method");
     var myUlList = document.querySelector("ul#navbar__list");
@@ -64,7 +65,7 @@ var buildMyNavBar = function() {
 //just for testing
 console.log("before the navbarBuilder");
 //building the navBar after loading all Dom content
-document.addEventListener("DomContentLoaded", buildMyNavBar);
+document.addEventListener("DOMContentLoaded", buildMyNavBar);
 //just for testing
 console.log("afer the navbarBuilder");
 // Scroll to section on link click
