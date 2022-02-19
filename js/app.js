@@ -63,8 +63,9 @@ var buildMyNavBar = function() {
         const listItem = document.createElement("li"); //creating the document fragment
         const SectionDataNav =
             sectionsNodeListNodeList[sec].getAttribute("data-nav");
-        console.log("inside for loop" + SectionDataNav);
-        listItem.innerHTML = `<a href="#${sec.id}" class="navLink">${SectionDataNav}</a>`; // adding <a> and customize the link
+        const sectionId = sectionsNodeListNodeList[sec].getAttribute("id");
+        console.log(sectionId);
+        listItem.innerHTML = `<a href="#${sectionId}" class="navLink">${SectionDataNav}</a>`; // adding <a> and customize the link
         documentFragment.appendChild(listItem);
     }
     myUlList.appendChild(documentFragment);
