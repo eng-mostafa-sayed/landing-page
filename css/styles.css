@@ -108,6 +108,12 @@ section {
     transition: ease 0.3s all;
 }
 
+.active-now {
+    color: white;
+    font-weight: 300;
+    background-color: black;
+}
+
 
 /* Header Styles */
 

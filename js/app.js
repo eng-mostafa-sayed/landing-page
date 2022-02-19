@@ -57,10 +57,8 @@ var buildMyNavBar = function() {
     // for loop on the sectionslist
     for (var sec = 0; sec < sectionsNumber; sec++) {
         const listItem = document.createElement("li"); //creating the document fragment
-        const SectionDataNav =
-            sectionsNodeListNodeList[sec].getAttribute("data-nav");
-        const sectionId = sectionsNodeListNodeList[sec].getAttribute("id");
-        console.log(sectionId);
+        const SectionDataNav = sectionsNodeList[sec].getAttribute("data-nav");
+        const sectionId = sectionsNodeList[sec].getAttribute("id");
         listItem.innerHTML = `<a href="#${sectionId}" class="navLink">${SectionDataNav}</a>`; // adding <a> and customize the link
         documentFragment.appendChild(listItem);
     }
@@ -68,16 +66,29 @@ var buildMyNavBar = function() {
 };
 
 //selecting all sections
-var sectionsNodeListNodeList = document.querySelectorAll("section");
+var sectionsNodeList = document.querySelectorAll("section");
 // storing the number of sections in var
-const sectionsNumber = sectionsNodeListNodeList.length;
-//just for testing
-console.log("before the navbarBuilder");
+const sectionsNumber = sectionsNodeList.length;
 //building the navBar after loading all Dom content
 document.addEventListener("DOMContentLoaded", buildMyNavBar);
-//just for testing
-console.log("afer the navbarBuilder");
 
 // Scroll to section on link click
 
 // Set sections as active
+
+//this function to change style for the sections by adding or removing class "active-now"
+const highlighting = () => {
+    for (var sec = 0; sec < sectionsNumber; sec++) {
+        //detecting the section's top
+        const sectionRectangle = sectionsNodeList[sec].getBoundingClientRect();
+        //if section on screen now change the style
+        if (sectionRectangle.top > 0 && sectionRectangle.top < 301) {
+            sectionsNodeList[sec].classList.add("active-now");
+            //if it gone away recover the style by removing the class "active-now"
+        } else {
+            sectionsNodeList[sec].classList.remove("active-now");
+        }
+    }
+};
+
+window.addEventListener("scroll", highlighting);
