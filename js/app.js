@@ -49,10 +49,6 @@
 
 // Build menu
 
-//selecting all sections
-var sectionsNodeListNodeList = document.querySelectorAll("section");
-// storing the number of sections in var
-const sectionsNumber = sectionsNodeListNodeList.length;
 var buildMyNavBar = function() {
     console.log("inside the navbar method");
     var myUlList = document.querySelector("#navbar__list");
@@ -70,12 +66,18 @@ var buildMyNavBar = function() {
     }
     myUlList.appendChild(documentFragment);
 };
+
+//selecting all sections
+var sectionsNodeListNodeList = document.querySelectorAll("section");
+// storing the number of sections in var
+const sectionsNumber = sectionsNodeListNodeList.length;
 //just for testing
 console.log("before the navbarBuilder");
 //building the navBar after loading all Dom content
 document.addEventListener("DOMContentLoaded", buildMyNavBar);
 //just for testing
 console.log("afer the navbarBuilder");
+
 // Scroll to section on link click
 
 // Set sections as active
