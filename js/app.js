@@ -51,16 +51,23 @@
 
 //selecting all sections
 var sectionsNodeListNodeList = document.querySelectorAll("section");
-
+// storing the number of sections in var
+const sectionsNumber = sectionsNodeListNodeList.length;
 var buildMyNavBar = function() {
     console.log("inside the navbar method");
-    var myUlList = document.querySelector("ul#navbar__list");
-    var documentFragment = document.createDocumentFragment(); //creating the document fragment
+    var myUlList = document.querySelector("#navbar__list");
+    //creating the document fragment
+    var documentFragment = new DocumentFragment();
     // for loop on the sectionslist
-    for (var sec = 1; sec <= sectionsNodeList.length; sec++) {
+    for (var sec = 0; sec < sectionsNumber; sec++) {
         const listItem = document.createElement("li"); //creating the document fragment
-        listItem.innerHTML = `<a href="#${sec.id}" class="navLink">${sec.dataset.nav}</a>`; // adding <a> and customize the link
+        const SectionDataNav =
+            sectionsNodeListNodeList[sec].getAttribute("data-nav");
+        console.log("inside for loop" + SectionDataNav);
+        listItem.innerHTML = `<a href="#${sec.id}" class="navLink">${SectionDataNav}</a>`; // adding <a> and customize the link
+        documentFragment.appendChild(listItem);
     }
+    myUlList.appendChild(documentFragment);
 };
 //just for testing
 console.log("before the navbarBuilder");
