@@ -108,8 +108,14 @@ section {
     transition: ease 0.3s all;
 }
 
-.active-now {
+.active-now-section {
     color: white;
+    font-weight: 300;
+    background-color: black;
+}
+
+.active-now-nav {
+    color: yellow;
     font-weight: 300;
     background-color: black;
 }
