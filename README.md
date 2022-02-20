@@ -14,7 +14,7 @@
 
 ### functions
 
-> **buildMyNavBar:** had been written(by me) to create a Navbar elements
+> **NewbuildMyNavBar:** had been written(by me) to create a Navbar elements
 > **highlighting:** had been written (by me) to mainupulate the highlighting on the body and it's corrosponding navbar element
 > **querySelector:** its built in function i used to manpulate DOM elements
 > **appendChild:** its built in function i used to append elements inside parent element
