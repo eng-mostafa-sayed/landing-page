@@ -28,6 +28,26 @@
  * Start Helper Functions
  *
  */
+
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ *
+ */
+
+// build the nav
+
+// Add class 'active' to section when near top of viewport
+
+// Scroll to anchor ID using scrollTO event
+
+/**
+ * End Main Functions
+ * Begin Events
+ *
+ */
+
+// Build menu
 const NewbuildMyNavBar = function() {
     // console.log("inside the navbar method"); //it was placed for testing purpose
     var myUlList = document.querySelector("#navbar__list");
@@ -67,55 +87,6 @@ const NewbuildMyNavBar = function() {
     }
     myUlList.appendChild(documentFragment);
 };
-
-//document.addEventListener("DOMContentLoaded", createNavbar);
-
-/**
- * End Helper Functions
- * Begin Main Functions
- *
- */
-
-// build the nav
-
-// Add class 'active' to section when near top of viewport
-
-// Scroll to anchor ID using scrollTO event
-
-/**
- * End Main Functions
- * Begin Events
- *
- */
-
-// Build menu
-
-const buildMyNavBar = function() {
-    // console.log("inside the navbar method"); //it was placed for testing purpose
-    var myUlList = document.querySelector("#navbar__list");
-    //creating the document fragment
-    var documentFragment = new DocumentFragment();
-    // for loop on the sectionslist
-    for (var sec = 0; sec < sectionsNumber; sec++) {
-        const listItem = window.document.createElement("li"); //creating the document fragment
-        listItem.classList.add(`section${sec + 1}`); // adding class to each <li> i will us it later to change highlighting while scrolling
-        const SectionDataNav = sectionsNodeList[sec].getAttribute("data-nav");
-        const sectionId = sectionsNodeList[sec].getAttribute("id");
-
-        //we added the <a> with id represents the section, and two classes on refering to the section which will used dynamically highlighting and the text shown will be the section number
-        listItem.innerHTML = `<a href="#${sectionId}" data-sec="${sectionId}" class="navLink ">${SectionDataNav}</a>`;
-        listItem.addEventListener("click", (evt) => {
-            console.log("insideEventListner");
-            evt.preventDefault();
-            const Ele = sectionsNodeList[sec];
-            console.log(sectionsNodeList[sec]);
-            Ele.scrollIntoView({ behavior: "smooth" });
-        });
-        documentFragment.appendChild(listItem);
-    }
-    myUlList.appendChild(documentFragment);
-};
-
 //selecting all sections
 var sectionsNodeList = document.querySelectorAll("section");
 // storing the number of sections in var
