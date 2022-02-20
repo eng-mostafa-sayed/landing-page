@@ -122,20 +122,3 @@ const highlighting = () => {
     }
 };
 window.addEventListener("scroll", highlighting);
-/*
-// make the smooth scrolling behavior
-const anchorItems = document.querySelectorAll("a");
-for (anchor of anchorItems) {
-    const anchorClass = anchor.getAttribute("data-sec");
-    console.log(anchorClass);
-    console.log(anchor);
-    const smoothNavigation = function(evt) {
-        evt.preventDefault();
-        var Distination = document.getElementById(`${anchorClass}`);
-        Distination.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-        });
-    };
-    anchor.addEventListener("click", smoothNavigation);
-}*/
