@@ -53,11 +53,13 @@ const NewbuildMyNavBar = function() {
         att3.value = "navLink ";
         anc.setAttributeNode(att3);
         anc.textContent = `${SectionDataNav}`;
-        anc.addEventListener("click", (evt) => {
+        const currentSec = sec;
+        //  console.log(currentSec); //it was for testing purposes
+        listItem.addEventListener("click", (evt) => {
             console.log("insideEventListner");
             evt.preventDefault();
-            console.log(sec);
-            sec.scrollIntoView({ behavior: "smooth" });
+            // console.log(currentSec); //it was for testing purposes
+            currentSec.scrollIntoView({ behavior: "smooth" });
         });
         listItem.appendChild(anc);
         documentFragment.appendChild(listItem);
