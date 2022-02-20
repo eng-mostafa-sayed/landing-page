@@ -19,3 +19,8 @@
 > **querySelector:** its built in function i used to manpulate DOM elements
 > **appendChild:** its built in function i used to append elements inside parent element
 > **addEventListener:** its built in function i used to manpulate events like (click,scroll)
+
+### added style
+
+- i used WOW.js animations
+- i used a button arrow from other old repo i had made before
