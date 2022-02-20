@@ -57,14 +57,23 @@ var buildMyNavBar = function() {
     // for loop on the sectionslist
     for (var sec = 0; sec < sectionsNumber; sec++) {
         const listItem = document.createElement("li"); //creating the document fragment
+        listItem.classList.add(`section${sec + 1}`); // adding class to each <li> i will us it later to change highlighting while scrolling
         const SectionDataNav = sectionsNodeList[sec].getAttribute("data-nav");
         const sectionId = sectionsNodeList[sec].getAttribute("id");
 
         //we added the <a> with id represents the section, and two classes on refering to the section which will used dynamically highlighting and the text shown will be the section number
-        listItem.innerHTML = `<a href="#${sectionId}" class="navLink section${
-      sec + 1
-    }">${SectionDataNav}</a>`;
+        listItem.innerHTML = `<a href="#${sectionId}" class="navLink ">${SectionDataNav}</a>`;
         documentFragment.appendChild(listItem);
+        // make the smooth scrolling behavior
+
+        listItem.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            var currentSection = sectionsNodeList[`${sec + 1}`];
+            currentSection.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+            });
+        });
     }
     myUlList.appendChild(documentFragment);
 };

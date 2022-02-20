@@ -1,13 +1,21 @@
 # Landing Page Project
 
-## Table of Contents
+## project author : Mostafa Sayed Abdelmonam Mostafa
 
-* [Instructions](#instructions)
+## project technologies
 
-## Instructions
+> 1. HTML
+> 2. CSS
+> 3. Java Script
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## description
 
-To get started, open `js/app.js` and start building out the app's functionality
+> this is web page has JS function to create a Navbar and add Some functionality
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+### functions
+
+> **buildMyNavBar:** had been written(by me) to create a Navbar elements
+> **highlighting:** had been written (by me) to mainupulate the highlighting on the body and it's corrosponding navbar element
+> **querySelector:** its built in function i used to manpulate DOM elements
+> **appendChild:** its built in function i used to append elements inside parent element
+> **addEventListener:** its built in function i used to manpulate events like (click,scroll)

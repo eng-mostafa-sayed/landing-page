@@ -82,12 +82,6 @@ section {
     color: black;
 }
 
-#navbar__list li:hover {
-    color: black;
-    font-weight: 300;
-    background-color: orange;
-}
-
 .navbar__menu li {
     display: inline-block;
     width: 7%;
@@ -118,6 +112,10 @@ section {
     color: yellow;
     font-weight: 300;
     background-color: black;
+}
+
+.active-now-nav * {
+    color: yellow;
 }
 
 
