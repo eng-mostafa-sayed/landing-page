@@ -40,7 +40,6 @@ const NewbuildMyNavBar = function() {
         listItem.classList.add(`section${i}`); // adding class to each <li> i will us it later to change highlighting while scrolling
         const SectionDataNav = sec.getAttribute("data-nav");
         const sectionId = sec.getAttribute("id");
-
         //we added the <a> with id represents the section, and two classes on refering to the section which will used dynamically highlighting and the text shown will be the section number
         // listItem.innerHTML = `<a href="#${sectionId}" data-sec="${sectionId}" class="navLink ">${SectionDataNav}</a>`;
         const anc = document.createElement("a");
@@ -54,7 +53,6 @@ const NewbuildMyNavBar = function() {
         att3.value = "navLink ";
         anc.setAttributeNode(att3);
         anc.textContent = `${SectionDataNav}`;
-
         anc.addEventListener("click", (evt) => {
             console.log("insideEventListner");
             evt.preventDefault();
@@ -67,6 +65,9 @@ const NewbuildMyNavBar = function() {
     }
     myUlList.appendChild(documentFragment);
 };
+
+//document.addEventListener("DOMContentLoaded", createNavbar);
+
 /**
  * End Helper Functions
  * Begin Main Functions
