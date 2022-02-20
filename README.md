@@ -22,5 +22,4 @@
 
 ### added style
 
-- i used WOW.js animations
 - i used a button arrow from other old repo i had made before
