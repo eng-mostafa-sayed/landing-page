@@ -50,11 +50,11 @@
 // Build menu
 const NewbuildMyNavBar = function() {
     // console.log("inside the navbar method"); //it was placed for testing purpose
-    var myUlList = document.querySelector("#navbar__list");
+    const myUlList = document.querySelector("#navbar__list");
     //creating the document fragment
-    var documentFragment = new DocumentFragment();
+    let documentFragment = new DocumentFragment();
     // for loop on the sectionslist
-    var i = 1;
+    let i = 1;
     for (sec of sectionsNodeList) {
         const listItem = document.createElement("li"); //creating the document fragment
         listItem.classList.add(`section${i}`); // adding class to each <li> i will us it later to change highlighting while scrolling
@@ -88,8 +88,8 @@ const NewbuildMyNavBar = function() {
     myUlList.appendChild(documentFragment);
 };
 //selecting all sections
-var sectionsNodeList = document.querySelectorAll("section");
-// storing the number of sections in var
+const sectionsNodeList = document.querySelectorAll("section");
+// storing the number of sections in variable
 const sectionsNumber = sectionsNodeList.length;
 //building the navBar after loading all Dom content
 document.addEventListener("DOMContentLoaded", NewbuildMyNavBar);
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", NewbuildMyNavBar);
 
 //this function to change style for the sections by adding or removing class "active-now"
 const highlighting = () => {
-    for (var sec = 0; sec < sectionsNumber; sec++) {
+    for (let sec = 0; sec < sectionsNumber; sec++) {
         //detecting the section's top
         const sectionRectangle = sectionsNodeList[sec].getBoundingClientRect();
         //the corresponding nav bar element for each section
@@ -108,14 +108,17 @@ const highlighting = () => {
         // console.log(navElement); //it was placed for testing purpose
         //if section on screen now change the style of it and its corresponding nav element
         if (sectionRectangle.top > -190 && sectionRectangle.top < 301) {
-            //now changing the section style
+            //now changing the section style and adding animation
             sectionsNodeList[sec].classList.add("active-now-section");
+            sectionsNodeList[sec].classList.add("active-now");
             //change the corresponding navbar element style too
             navElement.classList.add("active-now-nav");
         }
         //if it gone away recover the style by removing the class "active-now"
         else {
+            //removing animation and style
             sectionsNodeList[sec].classList.remove("active-now-section");
+            sectionsNodeList[sec].classList.remove("active-now");
             //change the corresponding navbar element style too
             navElement.classList.remove("active-now-nav");
         }
